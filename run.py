@@ -124,4 +124,4 @@ def select_data(sql, one=False):
   return (result[0] if result else None) if one else result
 
 if __name__ == '__main__':
-  app.run(debug = True, threaded=True, host='0.0.0.0')
+  app.run(threaded=True, host='0.0.0.0')
