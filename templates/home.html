@@ -1,5 +1,28 @@
 {% extends 'base.html' %}
 
 {% block container %}
-
+<table class="table stripped responsive mt-3">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Coffees Left</th>
+      <th>Credits Left</th>
+      <th>Credits Spent</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+      <tr>
+        <td><a href="/users/{{user[0]}}">{{user[1]}}</a></td>
+        <td>{{user[3]}}</td>
+        <td>{{user[2]}} €</td>
+        <td>{{user[4]}} €</td>
+        <td><a href="/users/{{user[0]}}/coffees/add"><i class="fas fa-plus"></i></a></td>
+        <td><a href="/users/{{user[0]}}/coffees/subtract"><i class="fas fa-minus"></i></a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
