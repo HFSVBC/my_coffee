@@ -3,7 +3,7 @@
 {% block container %}
 <div class="container mt-3">
   <div class="row mb-3">
-    <div class="col-sm-3 text-right">
+    <div class="col-3 text-right">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCredits">
         Update Credits
       </button>
@@ -11,27 +11,27 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-3 text-right font-weight-bold">Name:</div>
+    <div class="col-3 text-right font-weight-bold">Name:</div>
     <div class="col-sn-auto">{{user[1]}}</div>
   </div>
 
   <div class="row">
-    <div class="col-sm-3 text-right font-weight-bold">Credits Left:</div>
-    <div class="col-sn-auto">{{user[2] * 0.1}} €</div>
+    <div class="col-3 text-right font-weight-bold">Credits Left:</div>
+    <div class="col-sn-auto">{{user[2]}} €</div>
   </div>
 
   <div class="row">
-    <div class="col-sm-3 text-right font-weight-bold">Credits Spent:</div>
-    <div class="col-sn-auto">{{user[5] * 0.1}} €</div>
+    <div class="col-3 text-right font-weight-bold">Credits Spent:</div>
+    <div class="col-sn-auto">{{user[5]}} €</div>
   </div>
 
   <div class="row">
-    <div class="col-sm-3 text-right font-weight-bold">Coffees Consumed:</div>
+    <div class="col-3 text-right font-weight-bold">Coffees Consumed:</div>
     <div class="col-sn-auto">{{user[3]}}</div>
   </div>
 
   <div class="row">
-    <div class="col-sm-3 text-right font-weight-bold">Coffees Left:</div>
+    <div class="col-3 text-right font-weight-bold">Coffees Left:</div>
     <div class="col-sn-auto">{{user[4]}}</div>
   </div>
 </div>

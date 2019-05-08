@@ -1,5 +1,5 @@
 from flask import Flask, request, redirect, render_template, g
-import webbrowser, sys, json, urllib, sqlite3
+import sqlite3
 from os.path import isfile
 
 app = Flask(__name__, static_url_path='')
@@ -22,14 +22,14 @@ def newUser():
   if request.method == 'POST':
     name = request.form.get('name')
     credits = request.form.get('credits', 0)
-    addUser(name, credits * 10)
+    addUser(name, float(credits) * 10)
     return redirect("/home", code=302)
   else:
     return render_template('newUser.html')
 
 @app.route('/users/<int:id>/update_credits')
 def updateCreditsToUser(id):
-  updateCredits(id, request.values.get('credits', 0) * 10)
+  updateCredits(id, float(request.values.get('credits', 0)) * 10)
   return redirect("/users/{}".format(id), code=302)
 
 @app.route('/users/<int:id>/coffees/add')
@@ -45,17 +45,17 @@ def subtractCoffee(id):
 ### DATA
 def getCoffeesPerUserInfo():
   sql = """
-    SELECT users.id, users.name, users.credits AS credits_left,
-       users.credits AS coffees_left, users.credits_spent
+    SELECT users.id, users.name, ROUND(users.credits * 0.1, 2) AS credits_left,
+       users.credits AS coffees_left, ROUND(users.credits_spent * 0.1, 2)
     FROM users
   """
   return select_data(sql)
 
 def getUser(id):
   sql = """
-    SELECT users.id, users.name, users.credits AS credits_left,
+    SELECT users.id, users.name, ROUND(users.credits * 0.1, 2) AS credits_left,
        users.credits_spent AS coffees_consumed,
-       users.credits AS coffees_left, users.credits_spent
+       users.credits AS coffees_left, ROUND(users.credits_spent * 0.1, 2)
     FROM users
     WHERE users.id = '{}'
   """.format(id)
