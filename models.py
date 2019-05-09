@@ -27,8 +27,7 @@ class Coffee(db.Model):
   created_at = db.Column(db.DateTime(), nullable=False)
   updated_at = db.Column(db.DateTime(), nullable=False)
 
-  def __init__(self, name, user_id, created_at, updated_at):
-    self.name = name
+  def __init__(self, user_id, created_at, updated_at):
     self.user_id = user_id
     self.created_at = created_at
     self.updated_at = updated_at

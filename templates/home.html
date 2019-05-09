@@ -15,12 +15,12 @@
   <tbody>
     {% for user in users %}
       <tr>
-        <td><a href="/users/{{user[0]}}">{{user[1]}}</a></td>
-        <td>{{user[3]}}</td>
-        <td>{{user[2]}} €</td>
-        <td>{{user[4]}} €</td>
-        <td><a href="/users/{{user[0]}}/coffees/add"><i class="fas fa-plus"></i></a></td>
-        <td><a href="/users/{{user[0]}}/coffees/subtract"><i class="fas fa-minus"></i></a></td>
+        <td><a href="/users/{{user.id}}">{{user.name}}</a></td>
+        <td>{{user.coffees_left}}</td>
+        <td>{{user.credits_left}} €</td>
+        <td>{{user.credits_spent}} €</td>
+        <td><a href="/users/{{user.id}}/coffees/add"><i class="fas fa-plus"></i></a></td>
+        <td><a href="/users/{{user.id}}/coffees/subtract"><i class="fas fa-minus"></i></a></td>
       </tr>
     {% endfor %}
   </tbody>

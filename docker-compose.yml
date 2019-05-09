@@ -18,6 +18,8 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_DB=my_coffee
+    ports:
+      - 5432:5432
     volumes:
       - db-data:/var/lib/postgresql/data
       
