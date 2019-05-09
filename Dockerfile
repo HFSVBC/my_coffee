@@ -1,10 +1,8 @@
-FROM alpine:latest
+FROM python:3.7-alpine
 
 RUN apk add --update --no-cache \
   build-base \
-  postgresql-client \
-  python \
-  python-dev \
+  postgresql-dev \
   py-pip
 
 ENV INSTALL_DIR /app
@@ -16,4 +14,4 @@ COPY . ./
 RUN pip install -r requirements.txt
 
 ENTRYPOINT ["python"]
-CMD ["run.py"]
+CMD ["app.py"]

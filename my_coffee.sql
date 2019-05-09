@@ -1,6 +1,0 @@
-CREATE TABLE users(
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT,
-  credits INTEGER DEFAULT 0,
-  credits_spent INTEGER DEFAULT 0
-);
