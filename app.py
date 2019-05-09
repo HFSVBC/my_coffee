@@ -2,8 +2,10 @@ import os
 from datetime import datetime
 from flask import Flask, request, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
+from flask_sslify import SSLify
 
 app = Flask(__name__)
+sslify = SSLify(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
