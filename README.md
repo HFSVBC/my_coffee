@@ -5,3 +5,4 @@
 - move to a better hosting
 - integrate with RR github OAUTH
 - Statistics (Nuno Sousa)
+- warn when coffee credit is negative
