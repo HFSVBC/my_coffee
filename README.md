@@ -14,3 +14,4 @@ Development url: [http://localhost:5000](http://localhost:5000)
 - integrate with RR github OAUTH
 - Statistics (Nuno Sousa)
 - warn when coffee credit is negative
+- Make an API (Ivo Pereira)
