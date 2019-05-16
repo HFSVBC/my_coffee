@@ -10,8 +10,4 @@ $ docker-compose up
 
 Development url: [http://localhost:5000](http://localhost:5000)
 ## Next Steps
-- move to a better hosting [done]
-- integrate with RR github OAUTH
-- Statistics (Nuno Sousa)
-- warn when coffee credit is negative
-- Make an API (Ivo Pereira)
+* [Improvments](https://github.com/HFSVBC/my_coffee/projects/1)
