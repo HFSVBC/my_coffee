@@ -66,19 +66,20 @@ def subtractCoffee(id):
 ### DATA
 def getUsers():
   sql = """
-    SELECT users.id, users.name, ROUND(COUNT(coffees.user_id) * 0.1, 2) AS credits_spent, 
-      ROUND((users.credits - COUNT(coffees.user_id)) * 0.1, 2) AS credits_left, 
+    SELECT users.id, users.name, ROUND(COUNT(coffees.user_id) * 0.1, 2) AS credits_spent,
+      ROUND((users.credits - COUNT(coffees.user_id)) * 0.1, 2) AS credits_left,
       users.credits - COUNT(coffees.user_id) AS coffees_left
     FROM users
     LEFT JOIN coffees ON coffees.user_id = users.id
     GROUP BY users.id, users.name, users.credits, coffees.user_id
+    ORDER BY users.name
   """
   return db.engine.execute(sql)
 
 def getUser(id):
   sql = """
-    SELECT users.id, users.name, ROUND(COUNT(coffees.user_id) * 0.1, 2) AS credits_spent, 
-      ROUND((users.credits - COUNT(coffees.user_id)) * 0.1, 2) AS credits_left, 
+    SELECT users.id, users.name, ROUND(COUNT(coffees.user_id) * 0.1, 2) AS credits_spent,
+      ROUND((users.credits - COUNT(coffees.user_id)) * 0.1, 2) AS credits_left,
       users.credits - COUNT(coffees.user_id) AS coffees_left,
       COUNT(coffees.user_id) AS coffees_consumed
     FROM users
