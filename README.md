@@ -10,4 +10,4 @@ $ docker-compose up
 
 Development url: [http://localhost:5000](http://localhost:5000)
 ## Next Steps
-* [Improvments](https://github.com/HFSVBC/my_coffee/projects/1)
+* [Improvements](https://github.com/HFSVBC/my_coffee/projects/1)
